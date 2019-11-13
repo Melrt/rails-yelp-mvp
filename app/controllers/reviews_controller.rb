@@ -1,9 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :set_reviews, only: [ :chef ]
-  def new
-    @restaurant = Restaurant.find(params[:restaurant_id])
-    @review = Review.new
-  end
+  # before_action :set_reviews, only: [:chef]
 
   def create
     @restaurant = Restaurant.find(params[:restaurant_id])
@@ -13,7 +9,7 @@ class ReviewsController < ApplicationController
       redirect_to restaurant_path(@restaurant)
     else
 
-      render :new
+      render "restaurants/show"
     end
   end
 
