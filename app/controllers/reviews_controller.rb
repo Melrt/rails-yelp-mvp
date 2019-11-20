@@ -1,6 +1,5 @@
 class ReviewsController < ApplicationController
   # before_action :set_reviews, only: [:chef]
-
   def create
     @restaurant = Restaurant.find(params[:restaurant_id])
     @review = Review.new(review_params)
